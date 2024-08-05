@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const UserHeader = (props) => {
   const navigate = useNavigate();
-  const { onActiveSearch, onActiveBooking } = props;
+  const { onActiveSearch, onActiveBooking, onActiveStatus } = props;
 
   const onClickLogout = () => {
     Cookies.remove("token");
@@ -25,6 +25,7 @@ const UserHeader = (props) => {
   };
 
   const onClickStatus = () => {
+    onActiveStatus();
     setActiveOption("status");
     // Assuming you have a similar function to setActiveStatus
   };

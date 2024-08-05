@@ -1,0 +1,46 @@
+/* index.css */
+
+.check-status-form,
+.search-train-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+.check-status-form label,
+.search-train-form label {
+  margin-top: 10px;
+}
+
+.check-status-form input,
+.search-train-form input,
+.check-status-form button,
+.search-train-form button {
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+.check-status-form button,
+.search-train-form button {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.check-status-form p,
+.search-train-form p {
+  margin-top: 20px;
+  color: red;
+}
+
+.booking-details {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.booking-details h3 {
+  margin-bottom: 10px;
+}
