@@ -1,0 +1,35 @@
+/* index.css */
+
+.booking-form,
+.search-train-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+.booking-form label,
+.search-train-form label {
+  margin-top: 10px;
+}
+
+.booking-form input,
+.search-train-form input,
+.booking-form button,
+.search-train-form button {
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+.booking-form button,
+.search-train-form button {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.booking-form p,
+.search-train-form p {
+  margin-top: 20px;
+  color: red;
+}

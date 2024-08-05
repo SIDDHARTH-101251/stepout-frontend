@@ -3,8 +3,9 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import "./index.css";
 
-const UserHeader = () => {
+const UserHeader = (props) => {
   const navigate = useNavigate();
+  const { onActiveSearch, onActiveBooking } = props;
 
   const onClickLogout = () => {
     Cookies.remove("token");
@@ -16,12 +17,14 @@ const UserHeader = () => {
   const [status, setStatusActive] = useState(false);
 
   const onClickSearch = () => {
+    onActiveSearch();
     setSearchActive(true);
     setBookingActive(false);
     setStatusActive(false);
   };
 
   const onClickBooking = () => {
+    onActiveBooking();
     setBookingActive(true);
     setSearchActive(false);
     setStatusActive(false);
