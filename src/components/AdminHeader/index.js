@@ -3,7 +3,11 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 import "./index.css";
 
-const AdminHeader = () => {
+const AdminHeader = ({
+  onActiveAddTrain,
+  onActiveUpdateTrain,
+  onActiveDeleteTrain,
+}) => {
   const navigate = useNavigate();
 
   const onClickLogout = () => {
@@ -11,45 +15,46 @@ const AdminHeader = () => {
     navigate("/");
   };
 
-  const [addTrain, setAddActive] = useState(true);
-  const [updateTrain, setUpdateActive] = useState(false);
-  const [deleteTrain, setDeleteActive] = useState(false);
+  const [activeOption, setActiveOption] = useState("addTrain");
 
-  const onClickSearch = () => {
-    setAddActive(true);
-    setUpdateActive(false);
-    setDeleteActive(false);
+  const onClickAddTrain = () => {
+    onActiveAddTrain();
+    setActiveOption("addTrain");
   };
 
-  const onClickBooking = () => {
-    setUpdateActive(true);
-    setAddActive(false);
-    setDeleteActive(false);
+  const onClickUpdateTrain = () => {
+    onActiveUpdateTrain();
+    setActiveOption("updateTrain");
   };
 
-  const onClickStatus = () => {
-    setAddActive(false);
-    setUpdateActive(false);
-    setDeleteActive(true);
+  const onClickDeleteTrain = () => {
+    onActiveDeleteTrain();
+    setActiveOption("deleteTrain");
   };
 
   return (
     <div className="header-container">
       <div
-        className={`options ${addTrain ? "active-option" : ""}`}
-        onClick={onClickSearch}
+        className={`options ${
+          activeOption === "addTrain" ? "active-option" : ""
+        }`}
+        onClick={onClickAddTrain}
       >
         <h1>Add Train</h1>
       </div>
       <div
-        className={`options ${updateTrain ? "active-option" : ""}`}
-        onClick={onClickBooking}
+        className={`options ${
+          activeOption === "updateTrain" ? "active-option" : ""
+        }`}
+        onClick={onClickUpdateTrain}
       >
         <h1>Update Train</h1>
       </div>
       <div
-        className={`options ${deleteTrain ? "active-option" : ""}`}
-        onClick={onClickStatus}
+        className={`options ${
+          activeOption === "deleteTrain" ? "active-option" : ""
+        }`}
+        onClick={onClickDeleteTrain}
       >
         <h1>Delete Train</h1>
       </div>

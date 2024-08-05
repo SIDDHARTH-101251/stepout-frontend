@@ -1,0 +1,54 @@
+/* index.css */
+
+.update-train-form,
+.add-train-form,
+.check-status-form,
+.search-train-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+.update-train-form label,
+.add-train-form label,
+.check-status-form label,
+.search-train-form label {
+  margin-top: 10px;
+}
+
+.update-train-form input,
+.add-train-form input,
+.check-status-form input,
+.search-train-form input,
+.update-train-form button,
+.add-train-form button,
+.check-status-form button,
+.search-train-form button {
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+.update-train-form button,
+.add-train-form button,
+.check-status-form button,
+.search-train-form button {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.update-train-form p,
+.add-train-form p,
+.check-status-form p,
+.search-train-form p {
+  margin-top: 20px;
+}
+
+.message {
+  color: green;
+}
+
+.error {
+  color: red;
+}
