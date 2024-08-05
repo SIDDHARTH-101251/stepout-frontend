@@ -5,39 +5,24 @@ import Search from "../../components/Search";
 import Booking from "../../components/Booking";
 
 const UserDashboard = () => {
-  const [search, setSearchActive] = useState(true);
-  const [booking, setBookingActive] = useState(false);
+  const [activeComponent, setActiveComponent] = useState("search");
 
   const onActiveSearch = () => {
-    setSearchActive(true);
+    setActiveComponent("search");
   };
 
   const onActiveBooking = () => {
-    setBookingActive(true);
+    setActiveComponent("booking");
   };
 
-  return search ? (
+  return (
     <div className="user-dashboard-main-container">
       <UserHeader
         onActiveSearch={onActiveSearch}
         onActiveBooking={onActiveBooking}
       />
-      <Search />
-    </div>
-  ) : booking ? (
-    <div className="user-dashboard-main-container">
-      <UserHeader
-        onActiveSearch={onActiveSearch}
-        onActiveBooking={onActiveBooking}
-      />
-      <Booking />
-    </div>
-  ) : (
-    <div className="user-dashboard-main-container">
-      <UserHeader
-        onActiveSearch={onActiveSearch}
-        onActiveBooking={onActiveBooking}
-      />
+      {activeComponent === "search" && <Search />}
+      {activeComponent === "booking" && <Booking />}
     </div>
   );
 };

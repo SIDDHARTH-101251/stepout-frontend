@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import Cookies from "js-cookie";
 import "./index.css";
+import { useState } from "react";
 
 const UserHeader = (props) => {
   const navigate = useNavigate();
@@ -12,46 +12,45 @@ const UserHeader = (props) => {
     navigate("/");
   };
 
-  const [search, setSearchActive] = useState(true);
-  const [booking, setBookingActive] = useState(false);
-  const [status, setStatusActive] = useState(false);
+  const [activeOption, setActiveOption] = useState("search");
 
   const onClickSearch = () => {
     onActiveSearch();
-    setSearchActive(true);
-    setBookingActive(false);
-    setStatusActive(false);
+    setActiveOption("search");
   };
 
   const onClickBooking = () => {
     onActiveBooking();
-    setBookingActive(true);
-    setSearchActive(false);
-    setStatusActive(false);
+    setActiveOption("booking");
   };
 
   const onClickStatus = () => {
-    setSearchActive(false);
-    setBookingActive(false);
-    setStatusActive(true);
+    setActiveOption("status");
+    // Assuming you have a similar function to setActiveStatus
   };
 
   return (
     <div className="header-container">
       <div
-        className={`options ${search ? "active-option" : ""}`}
+        className={`options ${
+          activeOption === "search" ? "active-option" : ""
+        }`}
         onClick={onClickSearch}
       >
         <h1>Search</h1>
       </div>
       <div
-        className={`options ${booking ? "active-option" : ""}`}
+        className={`options ${
+          activeOption === "booking" ? "active-option" : ""
+        }`}
         onClick={onClickBooking}
       >
         <h1>Booking</h1>
       </div>
       <div
-        className={`options ${status ? "active-option" : ""}`}
+        className={`options ${
+          activeOption === "status" ? "active-option" : ""
+        }`}
         onClick={onClickStatus}
       >
         <h1>Status</h1>
