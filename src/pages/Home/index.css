@@ -1,0 +1,91 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #312525;
+}
+
+.form-container h1 {
+  font-family: "Roboto";
+  font-size: 28px;
+  color: #ffffff;
+}
+
+.form-style {
+  border: 1px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 380px;
+  width: 80%;
+  padding: 25px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(211, 209, 209, 0.2),
+    0 6px 20px 0 rgba(242, 240, 240, 0.19);
+}
+
+.form-style button {
+  align-self: center;
+}
+
+.form-style p {
+  text-align: center;
+}
+
+.form-style label {
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(3, 2, 67);
+}
+
+.form-style input {
+  height: 36px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 8px;
+  font-family: "Roboto";
+  font-size: 18px;
+  outline: none;
+}
+
+.form-style button {
+  height: 32px;
+  width: 100%;
+  background-color: #0281ff;
+  border: 0 solid;
+  border-radius: 2px;
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #ffffff;
+  outline: none;
+}
+
+.role-button {
+  width: 100px;
+  height: 32px;
+  background-color: gray;
+  border: 1px solid gray;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+
+.active-role-button {
+  width: 100px;
+  height: 32px;
+  border: 1px solid gray;
+  font-family: "Roboto";
+  font-size: 16px;
+  background-color: #ffffff;
+  border-width: 2px;
+  border-color: #0281ff;
+}
+
+@media screen and (min-width: 768px) {
+  .form-style {
+    width: 28%;
+  }
+}
